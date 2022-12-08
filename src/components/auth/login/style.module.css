@@ -1,0 +1,5 @@
+.heading {
+   color: blue; 
+   margin: 25, 25, 25, 0;
+   ruby-overhang: start;
+}
