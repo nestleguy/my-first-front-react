@@ -1,14 +1,19 @@
-import React from "react";
-import style from "./style.module.css";
-import Greeting from "./greeting";
+import React, {Fragment} from "react";
+import {TextField,Button,Typography} from "@mui/material"
 
-const LoginPage = () => {
-    const name ='Alex'
+const LoginPage = (props: any) => {
+    const {setPassword, setEmail} = props
     return (
-        <div>
-            <Greeting name={name}/>
-            <h1 className={style.heading}>Login page</h1>
-            <form action="./src/test/confirmation.php" method="post">
+        
+        <>
+            <Typography variant="h3" fontFamily='Popins' textAlign='center'>Hello Гігачад</Typography>
+            <Typography variant="body1" marginBottom={3} fontFamily='Popins' textAlign='center'>Enter email and password</Typography>
+            <TextField fullWidth={true} margin='normal' label="Email" variant="outlined" placeholder="Enter your email" onClick={(event: any) => setEmail(event.target.value)} />
+            <TextField type='password' fullWidth={true} margin='normal' label="Password" variant="outlined" placeholder="enter your password" onClick={(event: any) => setPassword(event.target.value)}/>
+            <Button type="submit" sx={{fontFamily: 'popins', marginTop: 2,marginBottom: 2, width: '40%'}} variant="contained">Login</Button>
+            <Typography variant="body1" sx= {{fontFamily: 'popins'}}>You have account? <span className="incitingtext"> Registration</span></Typography>
+
+            {/* <form action="./src/test/confirmation.php" method="post">
         <label>Username: <input type="text" name="username"></input></label>
         <label>Password: <input type="password" name="userpass"></input></label>
         <input type="submit" value="Submit"></input>
@@ -17,8 +22,8 @@ const LoginPage = () => {
          <input type="radio" name="gender" id="female"></input>
          
          <label htmlFor="female">Female</label>
-         </form>
-        </div>
+         </form> */}
+        </>
     );
 
     };
